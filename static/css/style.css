@@ -28,3 +28,49 @@ body,
 /* Footer color for sake of consistency with Navbar */
 .page-footer {
   background-color: #1C2331; }
+
+#carousel-div {
+  margin-top: 30px;
+}
+
+.scroll-down {
+  opacity: 1;
+  -webkit-transition: all .5s ease-in 3s;
+  transition: all .5s ease-in 3s;
+}
+
+#scroll-btn {
+  -webkit-animation: bounce 2s infinite 2s;
+  animation: bounce 2s infinite 2s;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+  margin-top: 20px;
+}
+
+#scroll-btn:before {
+    top: calc(50% - 8px);
+    left: calc(50% - 6px);
+    transform: rotate(-45deg);
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  20%,
+  30%,
+  10% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+  10% {
+    -webkit-transform: translateY(-4px);
+    -ms-transform: translateY(-4px);
+    transform: translateY(-4px);
+  }
+  20% {
+    -webkit-transform: translateY(-2px);
+    -ms-transform: translateY(-2px);
+    transform: translateY(-2px);
+  }
+}
