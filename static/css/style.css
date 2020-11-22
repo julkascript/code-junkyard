@@ -186,3 +186,28 @@ html {
     margin-top: 5%;
     width: 30%
 }
+
+#bot-yard, #bot-dev, #bot-astro {
+    width: 300%;
+    /*height: 50%;*/
+}
+
+#yard-color {
+    color: darkorange;
+    font-weight: bold;
+}
+
+#dev-color {
+    color: grey;
+    font-weight: bold;
+}
+
+#astro-color {
+    color: black;
+    font-weight: bold;
+}
+
+#scrap-lord-h1 {
+    font-weight: bold;
+    text-shadow: 0px 1px #0d0d0d;
+}
