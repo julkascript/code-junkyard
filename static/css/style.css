@@ -183,8 +183,9 @@ html {
 }
 
 #sign-in-container {
-    margin-top: 5%;
-    width: 30%
+    margin-top: 9%;
+    margin-bottom: 8%;
+    width: 30%;
 }
 
 #bot-yard, #bot-dev, #bot-astro {
