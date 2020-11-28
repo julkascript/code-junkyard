@@ -3,7 +3,7 @@ from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 
-from accounts.forms import SignupForm
+from accounts.forms import SignupForm, UserProfileForm
 from accounts.models import UserProfile
 
 
@@ -54,6 +54,7 @@ def signout_user(request):
 def user_profile(request, pk):
     user = User.objects.get(pk=pk)
     context = {
-        'username': user.username,
+        'profile_user': user,
+        'profile': user.userprofile,
     }
     return render(request, 'profile.html', context)

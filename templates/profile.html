@@ -8,20 +8,20 @@
             </p>
         </div>
         <div class="d-flex justify-content-center mb-4">
-            <img src="{{ user.userprofile.profile_picture }}" alt="no pic">
+            <img src="{{ profile.profile_picture.url }}" alt="no pic" class="w-50 rounded">
         </div>
         <div id="user-about-me" class="d-block text-center">
             <p class="text-">Extracted "about" data:</p>
             <p>
-                {{ user.userprofile.about_me }}
+                {{ profile.about_me }}
             </p>
         </div>
         <div class="d-flex justify-content-center mb-4">
-            <a id="user-git-link" href="{{ user.userprofile.github_link }}" class="mr-4 text-dark" target="_blank">
+            <a id="user-git-link" href="{{ profile.github_link }}" class="mr-4 text-dark" target="_blank">
                 <i class="fab fa-github">
                 </i>
             </a>
-            <a id="user-git-link" href="{{ user.userprofile.linkedin_link }}" class="text-dark" target="_blank">
+            <a id="user-git-link" href="{{ profile.linkedin_link }}" class="text-dark" target="_blank">
                 <i class="fab fa-linkedin-in">
                 </i>
             </a>
