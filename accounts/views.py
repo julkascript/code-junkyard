@@ -58,3 +58,14 @@ def user_profile(request, pk):
         'profile': user.userprofile,
     }
     return render(request, 'profile.html', context)
+
+
+def user_profile_edit(request, pk):
+    user = User.objects.get(pk=pk)
+    if request.method == 'GET':
+        form = UserProfileForm(instance=user.userprofile)
+        context = {
+            'form': form,
+            'user': user,
+        }
+        return render(request, 'profile-edit.html', context)
