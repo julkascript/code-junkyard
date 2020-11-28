@@ -1,0 +1,33 @@
+{% extends 'shared/base.html' %}
+{% block site_content %}
+    <div class="container" id="sign-in-container-profile">
+        <div id="user-title" class="d-flex justify-content-center mb-4">
+            <p class="text-center mt-4 mr-2 font-weight-bold">General</p>
+            <p id="user-username" class="text-center mt-4 font-weight-bold">
+                {{ user.username }}
+            </p>
+        </div>
+        <div class="d-flex justify-content-center mb-4">
+            <img src="{{ user.userprofile.profile_picture }}" alt="no pic">
+        </div>
+        <div id="user-about-me" class="d-block text-center">
+            <p class="text-">Extracted "about" data:</p>
+            <p>
+                {{ user.userprofile.about_me }}
+            </p>
+        </div>
+        <div class="d-flex justify-content-center mb-4">
+            <a id="user-git-link" href="{{ user.userprofile.github_link }}" class="mr-4 text-dark" target="_blank">
+                <i class="fab fa-github">
+                </i>
+            </a>
+            <a id="user-git-link" href="{{ user.userprofile.linkedin_link }}" class="text-dark" target="_blank">
+                <i class="fab fa-linkedin-in">
+                </i>
+            </a>
+        </div>
+        <div class="d-flex justify-content-center">
+            <button class="btn btn-warning mb-4">Edit</button>
+        </div>
+    </div>
+{% endblock %}

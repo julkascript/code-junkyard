@@ -1,5 +1,6 @@
 from django.contrib import messages
 from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 
 from accounts.forms import SignupForm
@@ -44,6 +45,15 @@ def signin_user(request):
             messages.info(request, 'Username or password is incorrect.')
     return render(request, 'sign-in.html')
 
+
 def signout_user(request):
     logout(request)
     return redirect('home')
+
+
+def user_profile(request, pk):
+    user = User.objects.get(pk=pk)
+    context = {
+        'username': user.username,
+    }
+    return render(request, 'profile.html', context)
