@@ -8,7 +8,8 @@
             </p>
         </div>
         <div class="d-flex justify-content-center mb-4">
-            <img src="{{ profile.profile_picture.url }}" alt="no pic" class="w-50 rounded">
+            <img src="{% if profile.profile_picture.url %}{{ profile.profile_picture.url }}{% endif %}"
+                 alt="no pic" class="w-50 rounded">
         </div>
         <div id="user-about-me" class="d-block text-center">
             <p class="text-">Extracted "about" data:</p>

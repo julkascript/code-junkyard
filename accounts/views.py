@@ -5,6 +5,7 @@ from django.shortcuts import render, redirect
 
 from accounts.forms import SignupForm, UserProfileForm
 from accounts.models import UserProfile
+from core.clean_up import clean_up_files
 
 
 def signup_user(request):
@@ -69,3 +70,15 @@ def user_profile_edit(request, pk):
             'user': user,
         }
         return render(request, 'profile-edit.html', context)
+    old_img = user.userprofile.profile_picture
+    form = UserProfileForm(request.POST, request.FILES, instance=user.userprofile)
+    if form.is_valid():
+        if old_img:
+            clean_up_files(old_img.path)
+        form.save()
+        return redirect('user profile', user.pk)
+    context = {
+        'form': form,
+        'user': user,
+    }
+    return render(request, 'profile.html', context)

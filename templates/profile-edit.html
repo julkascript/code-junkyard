@@ -7,14 +7,25 @@
                 {{ user.username }}
             </p>
         </div>
-        <form method="post" class="furniture-form">
+        <form method="post" action="{% url 'user profile edit' user.pk %}" enctype="multipart/form-data">
+            {% csrf_token %}
             <div class="form-group">
-                {% csrf_token %}
-                {{ form.as_p }}
-                <div class="d-flex justify-content-center">
-                    <a href="{% url 'user profile edit' user.pk %}" class="btn btn-warning mb-4" type="submit">Apply
-                        changes</a>
-                </div>
+                <label for="id_about_me">About me:</label>
+                {{ form.about_me }}
+            </div>
+            <div class="form-block">
+                <label for="id_github_link"><i class="fab fa-github"></i></label>
+                {{ form.github_link }}
+            </div>
+            <div class="form-block">
+                <label for="id_github_link"><i class="fab fa-linkedin-in"></i></label>
+                {{ form.linkedin_link }}
+            </div>
+            <div class="form-block">
+                {% if form.profile_picture %}{{ form.profile_picture }}{% endif %}
+            </div>
+            <div class="d-flex justify-content-center">
+                <button class="btn btn-success mb-4" type="submit">Apply changes</button>
             </div>
         </form>
     </div>

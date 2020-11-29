@@ -28,3 +28,8 @@ class UserProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
         fields = ('profile_picture', 'about_me', 'github_link', 'linkedin_link')
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for (_, field) in self.fields.items():
+            field.widget.attrs['class'] = 'form-control mb-3'

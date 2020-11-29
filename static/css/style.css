@@ -182,7 +182,7 @@ html {
     margin-bottom: 30%;
 }
 
-#sign-in-container, #sign-in-container-profile {
+#sign-in-container {
     margin-top: 9%;
     margin-bottom: 8%;
     width: 30%;
@@ -190,6 +190,9 @@ html {
 
 #sign-in-container-profile {
     border: 1px solid darkorange;
+    margin-top: 6%;
+    margin-bottom: 3%;
+    width: 30%;
 }
 
 #bot-yard, #bot-dev, #bot-astro {
