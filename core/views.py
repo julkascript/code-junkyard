@@ -25,3 +25,8 @@ def post_create(req):
     context = {'form': form}
     return render(req, 'post-create.html', context)
 
+
+@login_required(login_url='user signin')
+def post_details(req, pk):
+    context = {}
+    return render(req, 'post-details.html', context)

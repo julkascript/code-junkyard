@@ -1,13 +1,7 @@
 {% extends 'shared/base.html' %}
 {% block site_content %}
     <div class="container" id="sign-in-container-profile">
-            <div id="user-title" class="d-flex justify-content-center">
-                <p class="text-center mt-4 mr-2 font-weight-bold">General</p>
-                <p id="user-username" class="text-center mt-4 font-weight-bold">
-                    {{ user.username }}
-                </p>
-            </div>
-            <hr id="hr-bar">
+        {% include 'shared/title-and-user.html' %}
         <div class="d-flex justify-content-center mb-4">
             <img src="{% if profile.profile_picture.url %}{{ profile.profile_picture.url }}{% endif %}"
                  alt="no pic" class="w-50 rounded">

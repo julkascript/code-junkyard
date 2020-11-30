@@ -18,6 +18,13 @@
 
             <!-- Left -->
             <ul class="navbar-nav mr-auto">
+                {% if user.is_authenticated %}
+                    <li class="nav-item mt-2">
+                        <a class="text-warning" href="{% url 'post create' %}">
+                            <i class="fas fa-recycle fa-lg"></i>
+                        </a>
+                    </li>
+                {% endif %}
                 {#                <li class="nav-item active">#}
                 {#                    <a class="nav-link" href="#">Browse#}
                 {#                        <span class="sr-only">(current)</span>#}
@@ -37,7 +44,7 @@
                 {#                </li>#}
             </ul>
 
-            <!-- Right -->
+            <!-- Right / sign in or profile logic -->
             <ul class="navbar-nav nav-flex-icons">
                 {% if user.is_authenticated %}
                     <li class="nav-item">

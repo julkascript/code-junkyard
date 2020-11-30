@@ -231,7 +231,7 @@ html {
 #hr-bar {
     vertical-align: top;
     margin-top: 0;
-    width: 50%
+    width: 30%
 }
 
 #recycle-container-profile {
@@ -239,4 +239,11 @@ html {
     margin-top: 6%;
     margin-bottom: 3%;
     width: 30%;
+}
+
+#recycle-post-container {
+    border: 1px solid darkolivegreen;
+    margin-top: 6%;
+    margin-bottom: 3%;
+    width: 50%;
 }
