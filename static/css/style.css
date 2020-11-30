@@ -233,3 +233,10 @@ html {
     margin-top: 0;
     width: 50%
 }
+
+#recycle-container-profile {
+    border: 1px solid darkolivegreen;
+    margin-top: 6%;
+    margin-bottom: 3%;
+    width: 30%;
+}
