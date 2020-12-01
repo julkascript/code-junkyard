@@ -30,7 +30,8 @@ def post_create(req):
 def post_details(req, pk):
     user = req.user
     post = Post.objects.get(pk=pk)
+    tags = post.tags.split(", ")
     context = {
-        'user': user, 'post': post
+        'user': user, 'post': post, 'tags': tags
     }
     return render(req, 'post-details.html', context)

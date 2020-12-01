@@ -16,31 +16,54 @@
     <div id='stars2'></div>
     <div id='stars3'></div>
     <div class="container" id="recycle-post-container">
-        {% include 'shared/title-and-user.html' %}
-{#        <div id="solar">#}
-{#            <div id="sun"></div>#}
-{#            <div id="mercury-orbit">#}
-{#                <div id="mercury"></div>#}
-{#            </div>#}
-{#        </div>#}
-        <div id="title-wrapper" class="">
+        <div id="user-title" class="d-flex justify-content-center">
+            <p class="text-center mt-4 mr-2 font-weight-normal" id="title-title-user">Originator: </p>
+            <p class="text-center mt-4 mr-2 font-weight-normal" id="title-title-user">General</p>
+            <p id="user-username" class="text-center mt-4 font-weight-normal">
+                {{ post.creator }}
+            </p>
+        </div>
+        <hr id="hr-bar">
+        {#        <div id="solar">#}
+        {#            <div id="sun"></div>#}
+        {#            <div id="mercury-orbit">#}
+        {#                <div id="mercury"></div>#}
+        {#            </div>#}
+        {#        </div>#}
+        <div id="title-wrapper" class="mb-lg-4">
             <p class="text-center" id="post-title">{{ post.title }}</p>
         </div>
 
-        <p id="post-description">
-            {{ post.description }}
-        </p>
+        <div class="mb-lg-4 border border-warning">
+            <img src="{{ post.image.url }}" alt="no image" class="img-fluid">
+        </div>
 
-        <p id="post-image">
-            {{ post.image }}
-        </p>
-
-        <p id="post-git">
-            {{ post.git_link }}
-        </p>
-
-        <p id="post-tags">
-            {{ post.tags }}
-        </p>
+        <div id="post-description" class="d-block border border-warning p-4 text-center">
+            <p class="mb-4 font-weight-normal">Extracted description data:</p>
+            <hr>
+            <p class="text-justify">{{ post.description }}</p>
+            <p class="mb-4 font-weight-normal"></p>
+            <hr>
+            <p class="text-warning font-weight-normal">Get the project from here:</p>
+            <a href="{{ post.git_link }}" class="m-auto" target="_blank"><i
+                    class="fab fa-github fa-2x text-warning"></i></a>
+            <hr>
+            {% if post.tags %}
+                <div id="tags-group" class="text-white mt-4 text-center">
+                    <p id="all-tags">Tags:</p>
+                    <div class="d-inline-flex">
+                        {% for tag in tags %}
+                            <div class="mr-4 d-flex btn btn-purple">
+                                {{ tag }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% else %}
+                <p id="all-tags">
+                    The creator hasn't specified any tags.
+                </p>
+            {% endif %}
+        </div>
     </div>
 {% endblock %}

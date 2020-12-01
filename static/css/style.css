@@ -270,3 +270,8 @@ html {
 #post-title {
     margin: .5rem 0;
 }
+
+#all-tags {
+    font-size: larger;
+    color: white;
+}
