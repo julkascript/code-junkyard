@@ -28,5 +28,9 @@ def post_create(req):
 
 @login_required(login_url='user signin')
 def post_details(req, pk):
-    context = {}
+    user = req.user
+    post = Post.objects.get(pk=pk)
+    context = {
+        'user': user, 'post': post
+    }
     return render(req, 'post-details.html', context)

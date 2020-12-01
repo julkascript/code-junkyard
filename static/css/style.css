@@ -3,6 +3,7 @@ html,
 body,
 .view {
     height: 100%;
+    background-color: ghostwhite;
 }
 
 /* Full Page Carousel itself*/
@@ -242,8 +243,30 @@ html {
 }
 
 #recycle-post-container {
-    border: 1px solid darkolivegreen;
+    border: 1px solid antiquewhite;
     margin-top: 6%;
     margin-bottom: 3%;
+    width: 40%;
+    height: 170%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#title-wrapper {
+    border: 1px solid darkorange;
     width: 50%;
+}
+
+#title-title-user, #user-username {
+    color: white;
+    font-size: large;
+}
+
+#hr-bar, #title-wrapper, #post-description, #post-git, #post-tags {
+    color: white;
+}
+
+#post-title {
+    margin: .5rem 0;
 }

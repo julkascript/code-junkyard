@@ -55,7 +55,7 @@ def signout_user(request):
 def user_profile(request, pk):
     user = User.objects.get(pk=pk)
     context = {
-        'profile_user': user,
+        'user': user,
         'profile': user.userprofile,
     }
     return render(request, 'profile.html', context)
