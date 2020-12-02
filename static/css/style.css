@@ -242,6 +242,10 @@ html {
     width: 30%;
 }
 
+#posts-container {
+    margin-top: 6%;
+}
+
 #warning-container {
     border: 2px solid darkred;
     margin-top: 6%;

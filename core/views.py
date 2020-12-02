@@ -62,3 +62,14 @@ def post_edit(request, pk):
         'current_user': current_user,
     }
     return render(request, 'post-edit.html', context)
+
+
+@login_required(login_url='user signin')
+def post_list(request):
+    current_user = request.user
+    posts = Post.objects.all()
+    context = {
+        'current_user': current_user,
+        'posts': posts,
+    }
+    return render(request, 'post-list.html', context)
