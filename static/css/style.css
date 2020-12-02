@@ -253,6 +253,15 @@ html {
     align-items: center;
 }
 
+#post-details-edit {
+    border: 1px solid darkolivegreen;
+    margin-top: 6%;
+    margin-bottom: 3%;
+    width: 40%;
+    /*display: flex;*/
+    /*flex-direction: column;*/
+}
+
 #title-wrapper {
     border: 1px solid darkorange;
     width: 50%;
@@ -275,3 +284,4 @@ html {
     font-size: larger;
     color: white;
 }
+

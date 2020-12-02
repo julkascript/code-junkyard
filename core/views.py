@@ -35,3 +35,23 @@ def post_details(req, pk):
         'user': user, 'post': post, 'tags': tags
     }
     return render(req, 'post-details.html', context)
+
+
+@login_required(login_url='user signin')
+def post_edit(request, pk):
+    user = request.user
+    post = Post.objects.get(pk=pk)
+    if request.method == 'GET':
+        post_form = PostForm(instance=post)
+        context = {
+            'user': user, 'post': post, 'post_form': post_form
+        }
+        return render(request, 'post-edit.html', context)
+    post_form = PostForm(request.POST, request.FILES, instance=post)
+    if post_form.is_valid():
+        post_form.save()
+        return redirect('post details', post.pk)
+    context = {
+        'post_form': post_form,
+    }
+    return render(request, 'post-edit.html', context)
