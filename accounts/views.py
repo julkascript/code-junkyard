@@ -57,34 +57,42 @@ def signout_user(request):
 @login_required(login_url='user signin')
 def user_profile(request, pk):
     current_user = request.user
-    user = User.objects.get(pk=pk)
+    user_obj = User.objects.get(pk=pk)
     context = {
-        'user': user,
-        'profile': user.userprofile,
+        'user': user_obj,
         'current_user': current_user,
+        'profile': user_obj.userprofile,
     }
     return render(request, 'profile.html', context)
 
 
 @login_required(login_url='user signin')
 def user_profile_edit(request, pk):
-    user = User.objects.get(pk=pk)
+    user_obj = User.objects.get(pk=pk)
+    current_user = request.user
+    if user_obj != current_user:
+        context = {
+            'current_user': current_user,
+        }
+        return render(request, 'access-denied.html', context)
     if request.method == 'GET':
-        form = UserProfileForm(instance=user.userprofile)
+        form = UserProfileForm(instance=user_obj.userprofile)
         context = {
             'form': form,
-            'user': user,
+            'current_user': user_obj,
+            'user': user_obj,
         }
         return render(request, 'profile-edit.html', context)
-    old_img = user.userprofile.profile_picture
-    form = UserProfileForm(request.POST, request.FILES, instance=user.userprofile)
+    # old_img = user_obj.userprofile.profile_picture
+    form = UserProfileForm(request.POST, request.FILES, instance=user_obj.userprofile)
     if form.is_valid():
-        if old_img:
-            clean_up_files(old_img.path)
+        # if old_img:
+        #     clean_up_files(old_img.path)
         form.save()
-        return redirect('user profile', user.pk)
+        return redirect('user profile', user_obj.pk)
     context = {
         'form': form,
-        'user': user,
+        'user': user_obj,
+        'current_user': user_obj,
     }
     return render(request, 'profile.html', context)
