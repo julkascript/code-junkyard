@@ -41,7 +41,7 @@ def post_details(req, pk):
 def post_edit(request, pk):
     user = request.user
     post = Post.objects.get(pk=pk)
-    if user != post.creator:
+    if user.userprofile != post.creator:
         return render(request, 'access-denied.html')
     if request.method == 'GET':
         post_form = PostForm(instance=post)
