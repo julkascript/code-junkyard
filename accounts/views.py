@@ -1,5 +1,6 @@
 from django.contrib import messages
 from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 
@@ -47,20 +48,25 @@ def signin_user(request):
     return render(request, 'sign-in.html')
 
 
+@login_required(login_url='user signin')
 def signout_user(request):
     logout(request)
     return redirect('home')
 
 
+@login_required(login_url='user signin')
 def user_profile(request, pk):
+    current_user = request.user
     user = User.objects.get(pk=pk)
     context = {
         'user': user,
         'profile': user.userprofile,
+        'current_user': current_user,
     }
     return render(request, 'profile.html', context)
 
 
+@login_required(login_url='user signin')
 def user_profile_edit(request, pk):
     user = User.objects.get(pk=pk)
     if request.method == 'GET':

@@ -5,10 +5,10 @@
         <div class="d-flex justify-content-center mb-4">
             {% if profile.profile_picture %}
                 <img src="{{ profile.profile_picture.url }}"
-                 alt="" class="w-50 rounded">
+                     alt="" class="w-50 rounded">
             {% else %}
                 <img src="/static/img/default-profile.png"
-                 alt="upload a profile pic" class="w-50 rounded">
+                     alt="upload a profile pic" class="w-50 rounded">
             {% endif %}
         </div>
         <div id="user-about-me" class="d-block text-center">
@@ -28,8 +28,11 @@
                 </i>
             </a>
         </div>
-        <div class="d-flex justify-content-center">
-            <a href="{% url 'user profile edit' user.pk %}" class="btn btn-warning mb-4">Edit</a>
-        </div>
+        {% if current_user != user %}
+        {% else %}
+            <div class="d-flex justify-content-center">
+                <a href="{% url 'user profile edit' user.pk %}" class="btn btn-warning mb-4">Edit</a>
+            </div>
+        {% endif %}
     </div>
 {% endblock %}

@@ -6,7 +6,9 @@ from core.models import Post
 
 
 def index(req):
-    return render(req, 'index.html')
+    current_user = req.user
+    context = {'current_user': current_user,}
+    return render(req, 'index.html', context)
 
 
 @login_required(login_url='user signin')
