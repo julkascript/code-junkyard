@@ -1,0 +1,10 @@
+{% extends 'shared/base.html' %}
+{% block site_content %}
+    <div class="container d-block text-center" id="warning-container">
+        <img src="/static/img/dev-icon-small.png" alt="access denied" class="mb-lg-4 mt-lg-4">
+        <p class="font-weight-normal">"Bad news?"</p>
+        <hr class="hr-dark">
+        <p class="font-weight-bold text-danger">Access denied.</p>
+        <p class="font-weight-normal">Get back to <a href="{% url 'home' %}">home</a>.</p>
+    </div>
+{% endblock %}

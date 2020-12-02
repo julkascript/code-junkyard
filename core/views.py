@@ -32,7 +32,7 @@ def post_details(req, pk):
     post = Post.objects.get(pk=pk)
     tags = post.tags.split(", ")
     context = {
-        'user': user, 'post': post, 'tags': tags
+        'user': user, 'post': post, 'tags': tags, 'has_permissions': user == post.creator
     }
     return render(req, 'post-details.html', context)
 
@@ -41,6 +41,8 @@ def post_details(req, pk):
 def post_edit(request, pk):
     user = request.user
     post = Post.objects.get(pk=pk)
+    if user != post.creator:
+        return render(request, 'access-denied.html')
     if request.method == 'GET':
         post_form = PostForm(instance=post)
         context = {

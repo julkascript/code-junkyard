@@ -242,6 +242,13 @@ html {
     width: 30%;
 }
 
+#warning-container {
+    border: 2px solid darkred;
+    margin-top: 6%;
+    margin-bottom: 3%;
+    width: 20%;
+}
+
 #recycle-post-container {
     border: 1px solid antiquewhite;
     margin-top: 6%;
@@ -285,3 +292,6 @@ html {
     color: white;
 }
 
+.hr-dark {
+    width: 35%
+}
