@@ -1,11 +1,15 @@
 {% extends 'shared/base.html' %}
 {% block site_content %}
-    <div class="container d-flex flex-wrap" id="posts-container">
-        {% for post in posts %}
-            <div class="post-item border border-warning mr-4 mb-4 text-center">
-                <img src="{{ post.image.url }}" alt="No image for some reason" class="post-list-image">
-                <a href="{% url 'post details' post.pk %}">{{ post.title }}</a>
-            </div>
-        {% endfor %}
+    <div class="container" id="posts-container">
+        <h1 class="text-center d-block">Explore the Yard</h1>
+        <hr>
+        <div class="d-flex flex-wrap justify-content-between">
+            {% for post in posts %}
+                <div class="post-item border border-warning mr-2 mb-4 text-center">
+                    <img src="{{ post.image.url }}" alt="No image for some reason" class="post-list-image">
+                    <a href="{% url 'post details' post.pk %}" class="p-2">{{ post.title }}</a>
+                </div>
+            {% endfor %}
+        </div>
     </div>
 {% endblock %}

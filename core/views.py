@@ -5,6 +5,10 @@ from core.forms import PostForm
 from core.models import Post
 
 
+# def handler404(request, exception):
+#     return render(request, '404.html', status=404)
+
+
 def index(req):
     current_user = req.user
     context = {'current_user': current_user}
