@@ -35,7 +35,8 @@ def post_details(req, pk):
     post = Post.objects.get(pk=pk)
     tags = post.tags.split(", ")
     context = {
-        'post': post, 'tags': tags, 'has_permissions': current_user == post.creator, 'current_user': current_user
+        'post': post, 'tags': tags, 'has_permissions': current_user.userprofile == post.creator,
+        'current_user': current_user
     }
     return render(req, 'post-details.html', context)
 
