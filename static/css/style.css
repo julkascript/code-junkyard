@@ -299,3 +299,12 @@ html {
 .hr-dark {
     width: 35%
 }
+
+.post-item {
+    width: 20%
+}
+
+.post-list-image {
+    max-width: 100%;
+    max-height: 100%;
+}
