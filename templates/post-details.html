@@ -1,25 +1,10 @@
 {% extends 'shared/base.html' %}
-{% block links %}
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
-    <!-- Bootstrap core CSS -->
-    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/static/css/style.css">
-    <!-- Material Design Bootstrap -->
-    <link href="/static/css/mdb.min.css" rel="stylesheet">
-    <!-- Your custom styles (optional) -->
-    <link href="/static/css/style.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/static/css/stars.css">
-{% endblock %}
 {% block site_content %}
-    <div id='stars'></div>
-    <div id='stars2'></div>
-    <div id='stars3'></div>
     <div class="container" id="recycle-post-container">
-        <div id="user-title" class="d-flex justify-content-center">
-            <p class="text-center mt-4 mr-2 font-weight-normal" id="title-title-user">Originator: </p>
-            <p class="text-center mt-4 mr-2 font-weight-normal" id="title-title-user">General</p>
-            <p id="user-username" class="text-center mt-4 font-weight-normal">
+        <div class="d-flex justify-content-center">
+            <p class="text-center font-weight-bold mt-4 mr-2 font-weight-normal">Originator: </p>
+            <p class="text-center font-weight-bold mt-4 mr-2 font-weight-normal">General</p>
+            <p class="text-center mt-4 font-weight-bold">
                 {{ post.creator }}
             </p>
         </div>
@@ -31,7 +16,7 @@
         {#            </div>#}
         {#        </div>#}
         <div id="title-wrapper" class="mb-lg-4">
-            <p class="text-center" id="post-title">{{ post.title }}</p>
+            <p class="text-center text-dark font-weight-normal" id="post-title">{{ post.title }}</p>
         </div>
 
         <div class="mb-lg-4 border border-warning">
@@ -39,17 +24,16 @@
         </div>
 
         <div id="post-description" class="d-block border border-warning p-4 text-center">
-            <p class="mb-4 font-weight-normal">Extracted description data:</p>
+            <p class="mb-4 font-weight-normal text-dark">Extracted description data:</p>
             <hr>
-            <p class="text-justify">{{ post.description }}</p>
-            <p class="mb-4 font-weight-normal"></p>
+            <p class="text-justify text-dark">{{ post.description }}</p>
             <hr>
-            <p class="text-warning font-weight-normal">Get the project from here:</p>
+            <p class="text-dark font-weight-normal">Get the project from here:</p>
             <a href="{{ post.git_link }}" class="m-auto" target="_blank"><i
                     class="fab fa-github fa-2x text-warning"></i></a>
             <hr>
             {% if post.tags %}
-                <div id="tags-group" class="text-white mt-4 text-center">
+                <div class="mt-4 text-center text-dark">
                     <p id="all-tags">Tags:</p>
                     <div class="d-inline-flex">
                         {% for tag in tags %}
@@ -66,9 +50,14 @@
             {% endif %}
         </div>
         {% if has_permissions %}
-            <a class="btn btn-warning text-dark mt-lg-4" href="{% url 'post edit' post.pk %}">
-            Edit
+            <div class="edit-delete-buttons d-flex m-auto">
+                <a class="btn btn-warning text-dark mt-lg-4" href="{% url 'post edit' post.pk %}">
+                    Edit
+                </a>
+                <a class="btn btn-danger text-white mt-lg-4" href="">
+                    Scrap post
+                </a>
+            </div>
         {% endif %}
-        </a>
     </div>
 {% endblock %}
