@@ -78,3 +78,21 @@ def post_list(request):
         'posts': posts,
     }
     return render(request, 'post-list.html', context)
+
+
+@login_required(login_url='user signin')
+def post_delete(request, pk):
+    current_user = request.user
+    post = Post.objects.get(pk=pk)
+    if current_user.userprofile != post.creator:
+        context = {
+            'current_user': current_user
+        }
+        return render(request, 'access-denied.html', context)
+    if request.method == 'GET':
+        context = {
+            'post': post, 'current_user': current_user
+        }
+        return render(request, 'post-delete.html', context)
+    post.delete()
+    return redirect('post list')

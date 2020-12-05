@@ -1,0 +1,15 @@
+{% extends 'shared/base.html' %}
+{% block site_content %}
+    <div class="container d-block text-center p-2" id="warning-container">
+        <img src="/static/img/dev-icon-small.png" alt="Bot dev">
+        <p class="font-italic font-weight-normal mt-2">"This is your plan!?"</p>
+        <hr class="hr-dark">
+        <p>Are you sure you want to delete "{{ post.title }}"?</p>
+        <form action="{% url 'post delete' post.pk %}" method="post">
+            {% csrf_token %}
+            <button class="btn btn-danger">
+                Scrap forever
+            </button>
+        </form>
+    </div>
+{% endblock %}
