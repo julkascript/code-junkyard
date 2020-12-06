@@ -3,10 +3,19 @@ html,
 body,
 .view {
     height: 100%;
-    background-color: ghostwhite;
+    /*background-color: ghostwhite;*/
     min-height: 100%;
     display: flex;
     flex-direction: column;
+}
+
+.home-page, .signup-page, .signin-page {
+    background-color: ghostwhite;
+}
+
+.edit-profile-page, .profile-page, .post-create-page,
+.post-details-page, .post-edit-page, .post-list-page, .post-delete-page {
+    background-image: url("/static/img/stars-background.jpg");
 }
 
 /* Full Page Carousel itself*/
@@ -197,10 +206,17 @@ html {
 }
 
 #sign-in-container-profile {
-    border: 1px solid darkorange;
     margin-top: 6%;
     margin-bottom: 3%;
     width: 30%;
+    /*background-color: #000000;*/
+    /*background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%);*/
+    border: 1px solid #08adca;
+    border-image: linear-gradient(
+            to bottom,
+            #057c48,
+            rgba(0, 0, 0, 0)
+    ) 1 1 2 2;
 }
 
 #bot-yard, #bot-dev, #bot-astro {
@@ -239,14 +255,29 @@ html {
 #hr-bar {
     vertical-align: top;
     margin-top: 0;
-    width: 30%
+    width: 70%;
+    border: 0;
+    border-top: 1px solid #b8c6db;
 }
 
 #recycle-container-profile {
-    border: 1px solid darkolivegreen;
     margin-top: 6%;
     margin-bottom: 3%;
     width: 30%;
+    border: 1px solid #08adca;
+    border-image: linear-gradient(
+            to bottom,
+            #ffffff,
+            rgba(0, 0, 0, 0)
+    ) 1 1 2 2;
+    /*background-color: #63d471;*/
+    /*background-image: linear-gradient(315deg, #63d471 0%, #233329 74%);*/
+    /*background-color: #bdd4e7;*/
+    /*background-image: linear-gradient(315deg, #bdd4e7 0%, #8693ab 74%);*/
+}
+
+#post-btn {
+    border: 1px solid whitesmoke;
 }
 
 #posts-container {
@@ -261,7 +292,12 @@ html {
 }
 
 #recycle-post-container {
-    border: 1px solid darkorange;
+    border: 1px solid #08adca;
+    border-image: linear-gradient(
+            to bottom,
+            #08adca,
+            rgba(0, 0, 0, 0)
+    ) 1 1 1 1;
     margin-top: 6%;
     margin-bottom: 3%;
     width: 40%;
@@ -271,7 +307,12 @@ html {
 }
 
 #post-details-edit {
-    border: 1px solid darkolivegreen;
+    border: 1px solid #08adca;
+    border-image: linear-gradient(
+            to bottom,
+            #d06d05,
+            rgba(0, 0, 0, 0)
+    ) 1 1 1 1;
     margin-top: 6%;
     margin-bottom: 3%;
     width: 40%;
@@ -282,10 +323,21 @@ html {
 #title-wrapper {
     border: 1px solid darkorange;
     width: 50%;
+    margin-top: 4%;
+}
+
+#post-details-img {
+    margin: 2% 2%;
 }
 
 #hr-bar, #title-wrapper, #post-description, #post-git, #post-tags {
-    color: white;
+    /*color: white;*/
+    border: 1px solid #08adca;
+    border-image: linear-gradient(
+            to top,
+            #ffffff,
+            rgba(0, 0, 0, 0)
+    ) 1 1 2 2;
 }
 
 #post-title {
@@ -301,7 +353,8 @@ html {
 }
 
 .post-item {
-    width: 20%
+    width: 20%;
+    height: 255px;
 }
 
 .post-list-image {
@@ -309,3 +362,49 @@ html {
     max-height: 100%;
 }
 
+#user-username, #title-title-user {
+    font-size: 150%;
+}
+
+#user-about-me {
+    font-size: 110%;
+}
+
+#edit-btn {
+    border: 1px solid #057c48;
+}
+
+#edit-profile-btn {
+    border: 1px solid #057c48;
+}
+
+#post-list-item {
+    border: 1px solid #08adca;
+    border-image: linear-gradient(
+            to bottom,
+            #08adca,
+            rgba(0, 0, 0, 0)
+    ) 1 1 1 1;
+    margin-bottom: 4.5%;
+}
+
+#post-list-title {
+    color: whitesmoke;
+    /*background: -webkit-linear-gradient(#ffffff, #a9cdd2);*/
+    /*-webkit-background-clip: text;*/
+    /*-webkit-text-fill-color: transparent;*/
+}
+
+#post-details-description {
+    padding: 1%;
+    border: 1px solid #ffffff;
+    border-image: linear-gradient(
+            to top,
+            #ffffff,
+            rgba(0, 0, 0, 0)
+    ) 1 100%;
+}
+
+#edit-post-btn {
+    border: 1px solid darkorange;
+}

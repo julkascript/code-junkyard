@@ -2,38 +2,33 @@
 {% block site_content %}
     <div class="container" id="recycle-post-container">
         <div class="d-flex justify-content-center">
-            <p class="text-center font-weight-bold mt-4 mr-2 font-weight-normal">Originator: </p>
-            <p class="text-center font-weight-bold mt-4 mr-2 font-weight-normal">General</p>
-            <p class="text-center mt-4 font-weight-bold">
+            <p class="text-center text-white font-weight-bold mt-4 mr-2" id="title-title-user">Originator: </p>
+            <p class="text-center text-white font-weight-bold mt-4 mr-1" id="title-title-user">General</p>
+            <p class="text-center text-white mt-4 font-weight-bold" id="user-username">
                 {{ post.creator }}
             </p>
         </div>
         <hr id="hr-bar">
-        {#        <div id="solar">#}
-        {#            <div id="sun"></div>#}
-        {#            <div id="mercury-orbit">#}
-        {#                <div id="mercury"></div>#}
-        {#            </div>#}
-        {#        </div>#}
-        <div id="title-wrapper" class="mb-lg-4">
-            <p class="text-center text-dark font-weight-normal" id="post-title">{{ post.title }}</p>
+
+        <div id="title-wrapper">
+            <p class="text-center text-white font-weight-normal" id="post-title">{{ post.title }}</p>
         </div>
 
-        <div class="mb-lg-4 border border-warning">
+        <div class="border border-white" id="post-details-img">
             <img src="{{ post.image.url }}" alt="no image" class="img-fluid">
         </div>
 
-        <div id="post-description" class="d-block border border-warning p-4 text-center">
-            <p class="mb-4 font-weight-normal text-dark">Extracted description data:</p>
+        <div id="post-description" class="d-block p-4 text-center">
+            <p class="mb-4 font-weight-normal text-white">Extracted description data:</p>
             <hr>
-            <p class="text-justify text-dark">{{ post.description }}</p>
+            <p class="text-justify text-white" id="post-details-description">{{ post.description }}</p>
             <hr>
-            <p class="text-dark font-weight-normal">Get the project from here:</p>
+            <p class="text-white font-weight-normal">Get the project from here:</p>
             <a href="{{ post.git_link }}" class="m-auto" target="_blank"><i
                     class="fab fa-github fa-2x text-warning"></i></a>
             <hr>
             {% if post.tags %}
-                <div class="mt-4 text-center text-dark">
+                <div class="mt-4 text-center text-white">
                     <p id="all-tags">Tags:</p>
                     <div class="d-inline-flex">
                         {% for tag in tags %}
@@ -50,7 +45,7 @@
             {% endif %}
         </div>
         {% if has_permissions %}
-            <div class="edit-delete-buttons d-flex m-auto">
+            <div class="edit-delete-buttons d-flex mb-3">
                 <a class="btn btn-warning text-dark mt-lg-4" href="{% url 'post edit' post.pk %}">
                     Edit
                 </a>

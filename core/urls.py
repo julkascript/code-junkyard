@@ -10,5 +10,5 @@ urlpatterns = [
     path('post-list/', post_list, name="post list"),
     path('post-details/<int:pk>', post_details, name="post details"),
     path('post-details/edit/<int:pk>', post_edit, name="post edit"),
-    path('post-delete/<int:pk>', post_delete, name="post delete"),
+    path('post-details/delete/<int:pk>', post_delete, name="post delete"),
 ]

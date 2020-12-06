@@ -6,15 +6,17 @@ from django.shortcuts import render, redirect
 
 from accounts.forms import SignupForm, UserProfileForm
 from accounts.models import UserProfile
-from core.clean_up import clean_up_files
+# from core.clean_up import clean_up_files
 
 
 def signup_user(request):
+    page = "signup-page"
     if request.user.is_authenticated:
         return redirect('home')
     if request.method == 'GET':
         context = {
             'form': SignupForm(),
+            'page': page,
         }
         return render(request, 'sign-up.html', context)
     form = SignupForm(request.POST)
@@ -28,6 +30,7 @@ def signup_user(request):
         return redirect('home')
     context = {
         'form': form,
+        'page': page,
     }
     return render(request, 'sign-up.html', context)
 
@@ -56,9 +59,11 @@ def signout_user(request):
 
 @login_required(login_url='user signin')
 def user_profile(request, pk):
+    page = "profile-page"
     current_user = request.user
     user_obj = User.objects.get(pk=pk)
     context = {
+        'page': page,
         'user': user_obj,
         'current_user': current_user,
         'profile': user_obj.userprofile,
@@ -68,11 +73,13 @@ def user_profile(request, pk):
 
 @login_required(login_url='user signin')
 def user_profile_edit(request, pk):
+    page = "edit-profile-page"
     user_obj = User.objects.get(pk=pk)
     current_user = request.user
     if user_obj != current_user:
         context = {
             'current_user': current_user,
+            'page': page,
         }
         return render(request, 'access-denied.html', context)
     if request.method == 'GET':
@@ -81,6 +88,7 @@ def user_profile_edit(request, pk):
             'form': form,
             'current_user': user_obj,
             'user': user_obj,
+            'page': page,
         }
         return render(request, 'profile-edit.html', context)
     # old_img = user_obj.userprofile.profile_picture
@@ -94,5 +102,6 @@ def user_profile_edit(request, pk):
         'form': form,
         'user': user_obj,
         'current_user': user_obj,
+        'page': page,
     }
     return render(request, 'profile.html', context)

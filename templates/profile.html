@@ -12,18 +12,18 @@
             {% endif %}
         </div>
         <div id="user-about-me" class="d-block text-center">
-            <p class="text-">Extracted "about" data:</p>
-            <p>
+            <p class="text-white font-weight-normal">Extracted "about" data:</p>
+            <p class="text-white">
                 {{ profile.about_me }}
             </p>
         </div>
         <hr class="hr-dark">
         <div class="d-flex justify-content-center mb-4">
-            <a id="user-git-link" href="{{ profile.github_link }}" class="mr-4 text-dark" target="_blank">
+            <a id="user-git-link" href="{{ profile.github_link }}" class="mr-4 text-white" target="_blank">
                 <i class="fab fa-github">
                 </i>
             </a>
-            <a id="user-git-link" href="{{ profile.linkedin_link }}" class="text-dark" target="_blank">
+            <a id="user-git-link" href="{{ profile.linkedin_link }}" class="text-white" target="_blank">
                 <i class="fab fa-linkedin-in">
                 </i>
             </a>
@@ -31,7 +31,7 @@
         {% if current_user != user %}
         {% else %}
             <div class="d-flex justify-content-center">
-                <a href="{% url 'user profile edit' user.pk %}" class="btn btn-warning mb-4">Edit</a>
+                <a href="{% url 'user profile edit' user.pk %}" class="btn text-white mb-3" id="edit-btn">Edit</a>
             </div>
         {% endif %}
     </div>

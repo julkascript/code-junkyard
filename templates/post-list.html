@@ -1,13 +1,14 @@
 {% extends 'shared/base.html' %}
 {% block site_content %}
     <div class="container" id="posts-container">
-        <h1 class="text-center d-block">Explore the Yard</h1>
-        <hr>
+        <h1 class="text-center d-block text-white">SECTOR II: The Yard</h1>
+        <hr class="hr-dark mb-4">
         <div class="d-flex flex-wrap justify-content-between">
             {% for post in posts %}
-                <div class="post-item border border-warning mr-2 mb-4 text-center">
-                    <img src="{{ post.image.url }}" alt="No image for some reason" class="post-list-image">
-                    <a href="{% url 'post details' post.pk %}" class="p-2">{{ post.title }}</a>
+                <div class="post-item mr-2 text-center p-2" id="post-list-item">
+                    <a href="{% url 'post details' post.pk %}"
+                       class="mt-2 font-weight-normal" id="post-list-title">{{ post.title }}</a>
+                    <img src="{{ post.image.url }}" alt="No image for some reason" class="post-list-image mt-2">
                 </div>
             {% endfor %}
         </div>

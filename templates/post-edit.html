@@ -1,25 +1,27 @@
 {% extends 'shared/base.html' %}
 {% block site_content %}
     <div class="container p-4" id="post-details-edit">
-        <p class="text-center mt-4 mr-2 font-weight-normal">Edit post</p>
+        <p class="text-center text-white mt-4 mr-2 font-weight-normal">Edit post</p>
         <form action="{% url 'post edit' post.pk %}" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
-            {{ post_form.title.label }}
-            {{ post_form.title }}
+            <div class="text-white">
+                {{ post_form.title.label }}
+                {{ post_form.title }}
 
-            {{ post_form.description.label }}
-            {{ post_form.description }}
+                {{ post_form.description.label }}
+                {{ post_form.description }}
 
-            {{ post_form.git_link.label }}
-            {{ post_form.git_link }}
+                {{ post_form.git_link.label }}
+                {{ post_form.git_link }}
 
-            {{ post_form.tags.label }}
-            {{ post_form.tags }}
+                {{ post_form.tags.label }}
+                {{ post_form.tags }}
 
-            {{ post_form.image.label }}
-            {{ post_form.image }}
+                {{ post_form.image.label }}
+                {{ post_form.image }}
+            </div>
             <div id="button-apply" class="d-flex justify-content-center">
-                <button class="btn btn-green" type="submit">Apply changes</button>
+                <button class="btn text-white" type="submit" id="edit-post-btn">Apply changes</button>
             </div>
         </form>
     </div>
