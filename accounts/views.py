@@ -45,6 +45,8 @@ def signin_user(request):
 
         if user is not None:
             login(request, user)
+            if 'next' in request.POST:
+                return redirect(request.POST.get('next'))
             return redirect('home')
         else:
             messages.info(request, 'Username or password is incorrect.')

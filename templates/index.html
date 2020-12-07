@@ -278,7 +278,7 @@
                 <div id="find-your-thing" class="d-flex flex-wrap justify-content-between">
                     {% for post in posts %}
                         <div class="post-item mr-2 text-center p-2 border border-primary" id="post-list-item">
-                            <a href="{% url 'post details' post.pk %}"
+                            <a href="{% url 'post details' post.pk %}?next={{ request.path }}"
                                class="mt-2 font-weight-normal text-primary" id="post-list-title">{{ post.title }}</a>
                             <img src="{{ post.image.url }}" alt="No image for some reason"
                                  class="post-list-image mt-2">
@@ -291,4 +291,6 @@
         </div>
     </main>
     <!--Main layout-->
+    <!-- script for scroll button -->
+    <script type="text/javascript" src="/static/js/scripts.js"></script>
 {% endblock %}
