@@ -466,3 +466,16 @@ html {
     margin-top: 5%;
     margin-bottom: 3%;
 }
+
+.post-details-tag {
+    padding: 1%;
+    height: 50%;
+    border: 1px solid #fff;
+    margin: 0 auto;
+
+}
+
+#pass-check {
+    display: none;
+}
+

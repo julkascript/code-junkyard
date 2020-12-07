@@ -28,11 +28,11 @@
                     class="fab fa-github fa-2x text-warning"></i></a>
             <hr>
             {% if post.tags %}
-                <div class="mt-4 text-center text-white">
+                <div class="mt-4 text-center text-white d-flex flex-column" id="tags-div">
                     <p id="all-tags">Tags:</p>
                     <div class="d-inline-flex">
                         {% for tag in tags %}
-                            <div class="mr-4 d-flex btn btn-purple">
+                            <div class="post-details-tag">
                                 {{ tag }}
                             </div>
                         {% endfor %}

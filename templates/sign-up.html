@@ -9,8 +9,13 @@
             {{ form.username }}
             {{ form.email }}
             {{ form.password1 }}
-            <div id="pass-check" class="text-left ml-1 mb-4"></div>
             {{ form.password2 }}
+            <div id="pass-check" class="text-left ml-1 mb-3 font-small">
+                <p id="upper-case">At least 1 upper case letter.</p>
+                <p id="lower-case">At least 1 lower case letter.</p>
+                <p id="length-case">At least 8 characters.</p>
+                <p id="match-case">Passwords must match.</p>
+            </div>
             <button id="sign-up-btn" class="btn btn-dark my-4 btn-block" type="submit">Sign up</button>
             <hr>
             <p class="text-center">Already have an account?
@@ -18,4 +23,5 @@
             </p>
         </form>
     </div>
+    <script type="text/javascript" src="/static/js/pass-validator.js"></script>
 {% endblock %}
