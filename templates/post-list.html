@@ -3,6 +3,21 @@
     <div class="container" id="posts-container">
         <h1 class="text-center d-block text-white">SECTOR II: The Yard</h1>
         <hr class="hr-dark mb-4">
+        {#        <form id="content">#}
+        {#            <input type="text" name="input" class="input" id="search-input">#}
+        {#            <button type="reset" class="search" id="search-btn"></button>#}
+        {#        </form>#}
+        <form action="{% url 'post list' %}" method="post">
+            {% csrf_token %}
+            <div class="wrap">
+                <div class="search">
+                    <input type="text" class="searchTerm" placeholder="What are you looking for?" name="search-field">
+                    <button type="submit" class="searchButton">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
         <div class="d-flex flex-wrap justify-content-between">
             {% for post in posts %}
                 <div class="post-item mr-2 text-center p-2" id="post-list-item">

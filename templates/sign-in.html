@@ -29,6 +29,9 @@
 {#            </div>#}
             <!-- Sign in button -->
             <button class="btn btn-dark btn-block my-4" id="sign-button" type="submit">Sign in</button>
+            {% for message in messages %}
+                <p class="text-center text-danger font-weight-bold">{{ message }}</p>
+            {% endfor %}
 
             <!-- Register -->
             <p>Not a member?

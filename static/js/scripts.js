@@ -6,18 +6,13 @@ scrollBtn.addEventListener("click", () => {
     });
 })
 
-let signUpBtn = document.getElementById('sign-up-btn')
-signUpBtn.addEventListener("click", function () {
-    console.log(222)
-    let pass1 = document.getElementById('pass1')
-    let pass2 = document.getElementById('pass2')
-    if (pass1.value !== pass2.value){
-        pass1.style.border = '1px solid red';
-        pass2.style.border = '1px solid red';
-    }
-    else {
-        pass1.style.border = 'none';
-        pass2.style.border = 'none';
-    }
-
-})
+// // updated 2019
+// const input = document.getElementById("search-input");
+// const searchBtn = document.getElementById("search-btn");
+//
+// const expand = () => {
+//   searchBtn.classList.toggle("close");
+//   input.classList.toggle("square");
+// };
+//
+// searchBtn.addEventListener("click", expand);

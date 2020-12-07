@@ -4,53 +4,18 @@
     <div class="container" id="sign-in-container">
         <form class="text-center border border-light p-5" method="post">
             <p class="h4 mb-4">Sign up</p>
-            {#            <div class="form-row mb-4">#}
-            {#                <div class="col">#}
-            {#                    <!-- First name -->#}
-            {#                    <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="First name">#}
-            {#                </div>#}
-            {#                <div class="col">#}
-            {#                    <!-- Last name -->#}
-            {#                    <input type="text" id="defaultRegisterFormLastName" class="form-control" placeholder="Last name">#}
-            {#                </div>#}
-            {#            </div>#}
             {% csrf_token %}
             <!-- Username -->
             {{ form.username }}
             {{ form.email }}
             {{ form.password1 }}
+            <div id="pass-check" class="text-left ml-1 mb-4"></div>
             {{ form.password2 }}
-
-            {#                <input type="text" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="Username">#}
-            {#                <!-- E-mail -->#}
-            {#                <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail">#}
-            {##}
-            {#                <!-- Password -->#}
-            {#                <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password"#}
-            {#                       aria-describedby="defaultRegisterFormPasswordHelpBlock">#}
-            {#                <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4 text-left">#}
-            {#                    At least 8 characters and 1 digit#}
-            {#                </small>#}
-            {#                <input type="password" id="defaultRegisterFormPassword" class="form-control"#}
-            {#                       placeholder="Repeat password" aria-describedby="defaultRegisterFormPasswordHelpBlock">#}
-
-            <!-- Phone number -->
-            {#            <input type="text" id="defaultRegisterPhonePassword" class="form-control" placeholder="Phone number"#}
-            {#                   aria-describedby="defaultRegisterFormPhoneHelpBlock">#}
-            {#            <small id="defaultRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4 text-left">#}
-            {#                Optional - for two step authentication#}
-            {#            </small>#}
-            <!-- Sign up button -->
             <button id="sign-up-btn" class="btn btn-dark my-4 btn-block" type="submit">Sign up</button>
             <hr>
-
-            <!-- Terms of service -->
             <p class="text-center">Already have an account?
                 <a href="{% url 'user signin' %}">Sign in.</a>
             </p>
         </form>
     </div>
-
-
-    <!-- Default form register -->
 {% endblock %}

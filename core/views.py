@@ -13,7 +13,7 @@ def index(req):
     current_user = req.user
     first_post = Post.objects.first()
     page = "home-page"
-    posts = Post.objects.all()[1:3]
+    posts = Post.objects.order_by('-id')[:4]
     context = {
         'current_user': current_user, 'posts': posts, 'first_post': first_post, "page": page,
     }
@@ -35,7 +35,7 @@ def post_create(req):
     form = PostForm(req.POST, req.FILES, instance=creator_post)
     if form.is_valid():
         form.save()
-        return redirect('home')
+        return redirect('post list')
     context = {
         'form': form,
         'current_user': req.user,
@@ -92,7 +92,17 @@ def post_edit(request, pk):
 def post_list(request):
     page = "post-list-page"
     current_user = request.user
+    if request.method == 'GET':
+        posts = Post.objects.order_by('-id')
+        context = {
+            'current_user': current_user,
+            'posts': posts,
+            'page': page,
+        }
+        return render(request, 'post-list.html', context)
+    search_result = request.POST.get('search-field').lower()
     posts = Post.objects.order_by('-id')
+    posts = [post for post in posts if search_result in post.title.lower() or search_result in post.tags.lower()]
     context = {
         'current_user': current_user,
         'posts': posts,
