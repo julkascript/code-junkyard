@@ -4,7 +4,6 @@ from django.shortcuts import render, redirect
 from core.forms import PostForm
 from core.models import Post
 
-
 # def handler404(request, exception):
 #     return render(request, '404.html', status=404)
 
@@ -50,8 +49,10 @@ def post_details(req, pk):
     current_user = req.user
     post = Post.objects.get(pk=pk)
     tags = post.tags.split(", ")
+    tags = [tag.upper() for tag in tags]
     context = {
-        'post': post, 'tags': tags,
+        'post': post,
+        'tags': tags,
         'has_permissions': current_user.userprofile == post.creator,
         'current_user': current_user,
         'page': page,

@@ -333,13 +333,16 @@ html {
 }
 
 #hr-bar, #title-wrapper, #post-description, #post-git, #post-tags {
-    /*color: white;*/
     border: 1px solid #08adca;
     border-image: linear-gradient(
             to top,
             #ffffff,
             rgba(0, 0, 0, 0)
     ) 1 1 2 2;
+}
+
+#post-description {
+    width: 100%;
 }
 
 #post-title {
@@ -470,12 +473,15 @@ html {
 .post-details-tag {
     padding: 1%;
     height: 50%;
-    border: 1px solid #fff;
-    margin: 0 auto;
-
+    border: 1px solid rebeccapurple;
+    margin-right: 2%;
+    text-align: center;
 }
 
 #pass-check {
     display: none;
 }
 
+#tags-inner-div {
+    justify-content: center;
+}

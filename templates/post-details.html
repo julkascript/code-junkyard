@@ -30,7 +30,7 @@
             {% if post.tags %}
                 <div class="mt-4 text-center text-white d-flex flex-column" id="tags-div">
                     <p id="all-tags">Tags:</p>
-                    <div class="d-inline-flex">
+                    <div class="d-inline-flex" id="tags-inner-div">
                         {% for tag in tags %}
                             <div class="post-details-tag">
                                 {{ tag }}
