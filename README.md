@@ -1,3 +1,5 @@
+# Available at https://code-junkyard.tk/
+
 My final project for the project defense for SoftUni. It's built on Django + JS + Bootstrap/HTML/CSS (DB - PostgreSQL).
 
 ## Purpose:
@@ -6,6 +8,7 @@ Code Junkyard is a place for "recycling" code. Have you ever abandoned a project
 On the yard you can post code snippets or even whole files. It doesn't need to be great because most of the times the idea itself is more than enough. It's right about time for some treasure hunting!
 
 ## How do I run it?
+Follow these steps if you would like to locally clone the project.
 Django, Python and PostgreSQL are necessary for running the project.
 
 1. Navigate to a directory of your choice and open your git bash there (or navigate through CMD with cd directory path).
@@ -18,7 +21,7 @@ Django, Python and PostgreSQL are necessary for running the project.
 8. Configure python interpreter for the project (options available from your IDE).
 9. Check in the code_junkyard/settings.py file for the database details.
 10. Create your database (its name and password should be identical to the settings file).
-NOTE: Check if the templates folder is selected as one for the project. You can set it up manually from the IDE.
+    1. NOTE: Check if the templates folder is selected as one for the project. You can set it up manually from the IDE.
 11. Run the server. 
 12. Run the following command in the terminal: manage.py makemigrations
 13. Run the following command in the terminal: manage.py migrate
@@ -27,16 +30,15 @@ NOTE: Check if the templates folder is selected as one for the project. You can 
 
 ## Site functionalities:
 
-1. Navigation bar (available at all times) with path to home, displaying sign in/up options for guests and profile/sign out options for logged in users.
-2. Footer with link to this GitHub. 
-3. Home page (welcome page) displaying info about the site, as well as some posts previews. 
-4. Sign in/Sign up functionality.
-5. Private parts access restriction for guest users. The user needs to sign in in order to view the other parts of the site.
-6. Admin panel and admin account for the admin. Can access everything.
-7. Posts.
+1. Navigation bar (available at all times) with path to home, displaying sign in/up options for guests and profile/sign out options for logged in users and a footer with link to my GitHub. 
+2. Home page (welcome page) displaying info about the site, as well as some posts previews at the bottom. If you open a post from this page you will be asked to log in (if you already are not logged) and then you will be redirected to the post you chose.  
+3. Sign in/Sign up functionality.
+4. Private parts access restriction for guest users. The user needs to sign in in order to view the other parts of the site.
+5. Admin panel and admin account for the admin. Can access everything.
+6. Posts.
     1. Posts can be viewed by everyone but edited only by the creator.
     2. Post list page. Displays all posts.
     3. Post create page. Creates post. Every post has a creator, title, description, picture and etc.
     4. Post display page (when post is opened). 
     5. Post edit page.
-8. Profile - profiles can be viewed by everyone but edited only by the profile user.
+7. Profile - profiles can be viewed by everyone but edited only by the profile user.
