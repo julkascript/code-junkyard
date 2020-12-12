@@ -1,6 +1,6 @@
 # Available at https://code-junkyard.tk/
 
-My final project for the project defense for SoftUni. It's built on Django + JS + Bootstrap/HTML/CSS (DB - PostgreSQL).
+My final project for the project defense for SoftUni. It's built on Django + JS + Bootstrap/HTML/CSS (DB - PostgreSQL). Hosted on AWS, deployed with Docker.
 
 ## Purpose:
 Code Junkyard is a place for "recycling" code. Have you ever abandoned a project that contains loads of quality code? One man's trash is another man's treasure! We have to start caring about the code environment. Let's not pollute GitHub and other platforms with rusty and forgotten code. Let's start recycling and reusing code!
