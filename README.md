@@ -1,5 +1,3 @@
-# Available at https://code-junkyard.tk/
-
 My final project for the project defense for SoftUni. It's built on Django + JS + Bootstrap/HTML/CSS (DB - PostgreSQL). Hosted on AWS, deployed with Docker.
 
 ## Purpose:
